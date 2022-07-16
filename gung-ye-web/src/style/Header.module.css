@@ -1,9 +1,21 @@
 .Header{
     padding: 0 30px;
     background-color: #ffffff;
+    position: fixed;
+    width: 100%;
 }
 .header{
     padding : 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    display: flex;
+    align-items: center;
+}
+.naviBtn{
+    font-size: 30px;
+    cursor: pointer;
 }
 .logo{
     width : 50px;
