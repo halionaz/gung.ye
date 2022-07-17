@@ -4,6 +4,7 @@
     background-color: #ffffff;
     position: fixed;
     width: 100%;
+    color: #222222;
 }
 .header{
     padding : 20px 0;
@@ -29,14 +30,23 @@
     padding: 5px;
     margin : 0;
 }
+.searchBar ion-icon{
+    font-size: 25px;
+    position: relative;
+    transform: translate(32px, 7.5px);
+}
 .searchBar input{
     border: solid rgba(128, 128, 128, 0.404) 2px;
     border-radius: 9999px;
-    height: 30px;
-    padding: 0 30px ;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 35px ;
 }
 .searchBar input:focus{
     border: solid rgb(128, 128, 128) 2px;
+}
+.searchBar *{
+    transition: color 0.3s ease 0s, border 0.3s ease 0s;
 }
 .btn{
     font-size: 30px;
@@ -47,7 +57,7 @@
     padding: 5px;
 }
 .btn:hover{
-    background-color: rgba(0, 0, 0, 0.24);
+    background-color: rgba(0, 0, 0, 0.103);
 }
 .logo{
     width : 50px;
