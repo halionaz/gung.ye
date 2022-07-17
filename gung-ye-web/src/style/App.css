@@ -1,3 +1,7 @@
+ion-icon {
+    pointer-events: none;
+}
+
 .App {
     background-color: #f8f8fa;
 }
