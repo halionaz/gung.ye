@@ -10,4 +10,5 @@
 - Oxopolitics
 
 ## To do
-- [ ] Routing with React-Router-DOM
+- [ ] 💥 Routing with React-Router-DOM
+- [ ] 💄 Implement the details of the search box
