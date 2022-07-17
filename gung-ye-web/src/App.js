@@ -8,6 +8,9 @@ function App() {
     return (
         <div className="App">
             <Header curMenu={curMenu} setCurMenu={setCurMenu} ></Header>
+            <div style={{padding : "100px 30px"}}>
+                내용내용내용
+            </div>
         </div>
     );
 }

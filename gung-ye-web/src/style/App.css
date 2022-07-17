@@ -5,3 +5,7 @@ ion-icon {
 .App {
     background-color: #f8f8fa;
 }
+
+*:focus {
+    outline: none;
+}

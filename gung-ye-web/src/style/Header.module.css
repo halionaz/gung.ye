@@ -1,4 +1,5 @@
 .Header{
+    box-sizing: border-box;
     padding: 0 30px;
     background-color: #ffffff;
     position: fixed;
@@ -7,21 +8,45 @@
 .header{
     padding : 20px 0;
     display: flex;
-    justify-content: space-between;
 }
-.left{
+.left, .right{
     display: flex;
     align-items: center;
+    flex : 2 2 0;
 }
-.naviBtn{
+.right{
+    justify-content: flex-end;
+}
+.right > div{
+    margin-left: 20px;
+}
+.logoDiv{
+    flex : 1 1 0;
+    display: flex;
+    justify-content: center;
+}
+.searchBar{
+    padding: 5px;
+    margin : 0;
+}
+.searchBar input{
+    border: solid rgba(128, 128, 128, 0.404) 2px;
+    border-radius: 9999px;
+    height: 30px;
+    padding: 0 30px ;
+}
+.searchBar input:focus{
+    border: solid rgb(128, 128, 128) 2px;
+}
+.btn{
     font-size: 30px;
     cursor: pointer;
-    transition : background-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s, box-shadow 0.3s ease 0s;
+    transition : background-color 0.3s ease 0s, color 0.3s ease 0s;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 9999px;
     padding: 5px;
 }
-.naviBtn:hover{
+.btn:hover{
     background-color: rgba(0, 0, 0, 0.24);
 }
 .logo{
