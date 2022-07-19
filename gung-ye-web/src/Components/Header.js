@@ -1,19 +1,21 @@
-import { useState } from "react";
-import logo from "./logo.png";
-import style from "./style/Header.module.css";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import logo from "../logo.png";
+import style from "../style/Header.module.css";
 
-export default function Header({ curMenu, setCurMenu }) {
+export default function Header() {
     const [searchFocus, setSearchFocus] = useState(false);
+    const location = useLocation();
+    const [mainBtn, setMainBtn] = useState("all");
 
-    const menuChange = () => {
-        setCurMenu((prev) => {
-            if (prev === "home") {
-                return "all";
-            } else {
-                return "home";
-            }
-        });
-    };
+    useEffect(() => {
+        if (location.pathname === "/") {
+            setMainBtn("all");
+        } else {
+            setMainBtn("feed");
+        }
+    }, [location]);
+
     const changeToMyWork = () => {
         console.log("/mywork로 보내기");
     };
@@ -25,13 +27,12 @@ export default function Header({ curMenu, setCurMenu }) {
         <header className={style.Header}>
             <div className={style.header}>
                 <div className={style.left}>
-                    <div
-                        className={`${style.btn} ${style.naviBtn}`}
-                        onClick={menuChange}
-                    >
-                        <ion-icon
-                            name={curMenu === "home" ? "menu" : "home"}
-                        ></ion-icon>
+                    <div className={`${style.btn} ${style.naviBtn}`}>
+                        <Link to={`/${mainBtn}`}>
+                            <ion-icon
+                                name={mainBtn === "all" ? "menu" : "home"}
+                            ></ion-icon>
+                        </Link>
                     </div>
                 </div>
                 <div className={`${style.logoDiv}`}>
