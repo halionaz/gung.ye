@@ -1,6 +1,9 @@
 ion-icon {
     pointer-events: none;
 }
+a{
+    color: black;
+}
 
 .App {
     background-color: #f8f8fa;
