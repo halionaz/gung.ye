@@ -1,16 +1,17 @@
 import "./style/App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Routes/Home";
 import Header from "./Header";
-import { useState } from "react";
 
 function App() {
-    const [curMenu, setCurMenu] = useState("home");
-
     return (
         <div className="App">
-            <Header curMenu={curMenu} setCurMenu={setCurMenu} ></Header>
-            <div style={{padding : "100px 30px"}}>
-                내용내용내용
-            </div>
+            <Router>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                </Routes>
+            </Router>
         </div>
     );
 }
