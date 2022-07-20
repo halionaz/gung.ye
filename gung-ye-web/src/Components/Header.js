@@ -69,13 +69,18 @@ export default function Header() {
                         className={`${style.btn} ${style.myWorkBtn}`}
                         onClick={changeToMyWork}
                     >
-                        <ion-icon name="reader"></ion-icon>
+                        <Link to="/history">
+                            <ion-icon name="reader"></ion-icon>
+                        </Link>
                     </div>
                     <div
                         className={`${style.btn} ${style.profileBtn}`}
                         onClick={changeToMyProfile}
                     >
+                        <Link to="/profile">
+
                         <ion-icon name="person"></ion-icon>
+                        </Link>
                     </div>
                 </div>
             </div>
