@@ -6,13 +6,15 @@ import style from "../style/Header.module.css";
 export default function Header() {
     const [searchFocus, setSearchFocus] = useState(false);
     const location = useLocation();
-    const [mainBtn, setMainBtn] = useState("all");
+    const [mainBtn, setMainBtn] = useState(null);
 
     useEffect(() => {
         if (location.pathname === "/") {
-            setMainBtn("all");
+            setMainBtn(null);
+        } else if (location.pathname === "/feed") {
+            setMainBtn(["menu", "all"]);
         } else {
-            setMainBtn("feed");
+            setMainBtn(["home", "feed"]);
         }
     }, [location]);
 
@@ -27,16 +29,20 @@ export default function Header() {
         <header className={style.Header}>
             <div className={style.header}>
                 <div className={style.left}>
-                    <div className={`${style.btn} ${style.naviBtn}`}>
-                        <Link to={`/${mainBtn}`}>
-                            <ion-icon
-                                name={mainBtn === "all" ? "menu" : "home"}
-                            ></ion-icon>
-                        </Link>
-                    </div>
+                    {mainBtn !== null ? (
+                        <div className={`${style.btn} ${style.naviBtn}`}>
+                            <Link to={`/${mainBtn[1]}`}>
+                                <ion-icon name={mainBtn[0]}></ion-icon>
+                            </Link>
+                        </div>
+                    ) : (
+                        ""
+                    )}
                 </div>
                 <div className={`${style.logoDiv}`}>
-                    <img className={style.logo} src={logo} alt="logo" />
+                    <div>
+                        <img className={style.logo} src={logo} alt="logo" />
+                    </div>
                 </div>
                 <div className={style.right}>
                     <div
